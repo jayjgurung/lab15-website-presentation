@@ -10,7 +10,6 @@ body, html{
     color:blanchedalmond;
     font-weight: 200;
     background-color:rgb(28, 81, 107);
-    
 }
 
 h1 {
@@ -48,6 +47,12 @@ h3, h4, h5, h6 {
     transform: translate(-50%, -50%);
     color: rgb(22, 21, 20);
     size: 100px;
+}
+
+.header-text h5{
+    font-weight: 200px;
+    color: rgb(5, 37, 50);
+    font-family: 'Vollkorn', serif;
 }
 
 #navbar{
@@ -136,9 +141,9 @@ div.stuff {
     border-color: black;
     float: top;
     margin: 10px;
-    padding: 20px;
-    padding-top: 1px;
-
+    padding: 300px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column; /* Align items vertically */
     align-items: center; /* Center items horizontally */
@@ -148,6 +153,10 @@ div.stuff {
 .stuff img{
     padding:40px;
     height: 400px;
+}
+div#updatebar{
+    padding: 50px;
+    background-color: #1f2c49;
 }
 /*
     #about-first {
@@ -192,12 +201,11 @@ footer {
   }
 
 .port {
-    height: 400px;
     background-color: #2b4254;
-    color: aliceblue;
+    color: rgb(216, 220, 193);
     margin: 10px; /* Add margin between columns */
     text-align: center;
-    padding: 20px;
+    padding: 0px;
     box-sizing: border-box; /* Include padding in width and height */
     border-width: 1px;
     border-style: dotted;
@@ -212,5 +220,33 @@ footer {
 }
 
 a{
+
     color: rgb(165, 137, 61);
+}
+
+/* .image-effect{
+    margin: 2rem 0;
+    padding: 0;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-effect > img{
+    width: 100%;
+    max-width: 100%;
+} */
+
+.image-effect--bw{
+    filter: grayscale(100%);
+    transition: filter 0.5s ease-in-out;
+}
+
+.image-effect--bw:hover{
+    filter: grayscale(0%);
+}
+
+#sketch{
+margin-top: 12px;
+color: #1f2c49;
 }

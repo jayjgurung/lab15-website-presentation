@@ -35,7 +35,52 @@
     
     <!-- sticky nav bar -->
     <script src="navbar.v01.js"></script>
+   
+    <canvas id="sketch" height="20" style="border: 1px solid gray;" ></canvas>
+    <script>
+          // Set the canvas width to the window width
+        const canvas = document.getElementById('sketch');
+        canvas.width = window.innerWidth;
+        // Optionally, update the canvas width if the window is resized
+        window.addEventListener('resize', function () {
+            canvas.width = window.innerWidth;
+            // You might need to redraw your content here if necessary
+        });
+
+        document.addEventListener('DOMContentLoaded', main);
+        var sketch;
+        var context;
+        var rectangle = {'x':0, 'y':0, 'w':100, 'h':25};
+        var dx = 5;
+        var fps = 10;
+
+    function main() {
+        sketch = document.getElementById('sketch');
+        context = sketch.getContext("2d");
+        setInterval(animate, fps);
+    }
+
+    function animate() {
+        context.clearRect(0, 0, sketch.offsetWidth, sketch.offsetHeight);
+        context.fillRect(rectangle.x, rectangle.y, 100, 25);
+
+        context.fillStyle = "antiquewhite";
+        rectangle.x = rectangle.x + dx;
+        
+        if (rectangle.x > sketch.offsetWidth - rectangle.w - dx) {
+            dx = dx * -1;
+            rectangle.x = offsetWidth;
+        } else if (rectangle.x < 0 + dx) {
+            dx = dx * -1;
+            rectangle.x = 0;
+        }
+    }
+    </script>
     
+
+    <div class="stuff" id="updatebar">
+        <h2>RECENT UPDATES</h2>
+    </div>
     <div class="stuff" id="home-first">
         <h2>Paper : "The adapation of technology has enhanced the way we experience art and culture"</h2>
         <h6> - Jay J Gurung</h6>
@@ -51,7 +96,7 @@
         <h6> - Jay J Gurung</h6>
         <a href="paper2.pdf"><h5> Is our human desire to improve what makes us human unique? Read here</h5></a> 
             <br><br>
-            At the heart of the narrative lies a profound question that has intrigued scholars throughout history: what defines the essence of being human? Diving into this inquiry from a diverse array of perspectives, the paper posits a compelling thesis — "the innate nature of human beings to improve themselves is what makes them human." Meticulously curated from a rich tapestry of resources and articles, this research delves into the distinctive trait that sets humans apart: the relentless drive to enhance themselves. As you traverse through the pages, discover how humans, amidst sharing the same earthly resources as myriad other living beings, stand uniquely characterized by their unparalleled ability to refine and elevate their capabilities. From the dawn of civilization to the present day, witness the unyielding progression in technology, innovation, art, and culture — an evolution that defines the very essence of the thriving human species. Join me in unraveling the fascinating journey of self-improvement that epitomizes what it truly means to be human.    
+        <h5> At the heart of the narrative lies a profound question that has intrigued scholars throughout history: what defines the essence of being human? Diving into this inquiry from a diverse array of perspectives, the paper posits a compelling thesis — "the innate nature of human beings to improve themselves is what makes them human." Meticulously curated from a rich tapestry of resources and articles, this research delves into the distinctive trait that sets humans apart: the relentless drive to enhance themselves. As you traverse through the pages, discover how humans, amidst sharing the same earthly resources as myriad other living beings, stand uniquely characterized by their unparalleled ability to refine and elevate their capabilities. From the dawn of civilization to the present day, witness the unyielding progression in technology, innovation, art, and culture — an evolution that defines the very essence of the thriving human species. Join me in unraveling the fascinating journey of self-improvement that epitomizes what it truly means to be human.    
         </h5>
  
     </div>
